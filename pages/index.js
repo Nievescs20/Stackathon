@@ -13,7 +13,7 @@ export default function Home({ locations }) {
         <meta name="keywords" content="weather, stackathon" />
       </Head>
       <h1 className="bg-gradient-to-r from-blue-200 to-green-300 flex justify-center">
-        Your News Now
+        Your Weather Now
       </h1>
       <div className="flex flex-wrap content-around justify-center">
         {locations.map((city) => {
@@ -22,7 +22,7 @@ export default function Home({ locations }) {
               <h1 className="font-black">City: {city.name}</h1>
               <h2 className="">Country: {city.sys.country}</h2>
               <h2 className="">
-                Temperature: {conversion(city.main.temp).toFixed(0)}K
+                Temperature: {conversion(city.main.temp).toFixed(0)}F
               </h2>
               <h2 className="">
                 Weather Description: {city.weather[0].description}
