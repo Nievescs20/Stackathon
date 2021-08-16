@@ -38,3 +38,18 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+function registerSW() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then((reg) => console.log("Service Worker: Registered"))
+      .catch((err) => console.log(`Service Worker: Error ${err}`));
+  }
+}
+
+if (typeof window !== "undefined") {
+  window.addEventListener("load", () => {
+    registerSW();
+  });
+}
